@@ -46,23 +46,16 @@ class ThreeInOne(object):
 
 class Test(unittest.TestCase):
 
-    def test_pop():
-        pass
+    def test(self):
+        data = ThreeInOne(2)
+        data.push(0, 5)
+        data.push(0, 8)
+        data.push(1, 5)
 
-    def test_push():
-        pass
-
-    def test_peek():
-        pass
-
-    def test_is_empty():
-        pass
-
-    def test_is_full():
-        pass
-
-    def test_index_of_top():
-        pass
+        self.assertTrue(data.is_full(0))
+        self.assertEqual(data.pop(0), 8)
+        self.assertTrue(data.is_empty(2))
+        self.assertEqual(data.index_of_top(1), 2)
 
 
 if __name__ == "__main__":
