@@ -32,7 +32,7 @@ class Stack(object):
 
     def peek(self, nstack=0):
         if self.is_empty(nstack):
-            raise Exception("Stack is empty")
+            return False
 
         return self.array[self.index_of_top(nstack)]
 
