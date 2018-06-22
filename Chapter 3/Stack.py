@@ -1,4 +1,4 @@
-"""Python implementation of a stack."""
+"""Python implementation of a stack via an array."""
 
 
 class Stack(object):
