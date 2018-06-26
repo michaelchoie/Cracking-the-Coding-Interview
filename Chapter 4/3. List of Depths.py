@@ -1,5 +1,4 @@
 """Create a linked list of all nodes at each depth of binary tree."""
-"""TODO"""
 
 
 class Node(object):
@@ -46,8 +45,6 @@ class LinkedList(object):
             self.tail = value
 
         self.length += 1
-
-        print(str(self.tail))
 
     def add_multiple(self, values):
         for node in values:
