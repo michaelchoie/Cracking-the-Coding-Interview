@@ -18,9 +18,7 @@ def successor(node):
         return None
 
     if node.right:
-        while node.left:
-            node = node.left
-        return node
+        return left_most_child(node.right)
 
     else:
         # go up until we're on the left side instead of the right
@@ -31,6 +29,16 @@ def successor(node):
             parent = parent.parent
 
         return parent
+
+
+def left_most_child(node):
+    if not node:
+        return None
+
+    while node.left:
+        node = node.left
+
+    return node
 
 
 class Test(unittest.TestCase):
@@ -44,7 +52,7 @@ class Test(unittest.TestCase):
         x.right.left = Node(6, x.right)
         x.right.right = Node(8, x.right)
 
-        self.assertEqual(successor(x.right).value, x.right.left.value)
+        self.assertEqual(successor(x.right).value, x.right.right.value)
 
         x = Node(5)
         x.left = Node(3, x)
